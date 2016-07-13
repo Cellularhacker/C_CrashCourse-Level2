@@ -1,6 +1,6 @@
 /*
 * 2016-07-12
-* 버블정렬 - 프로젝트
+* 삽입정렬 - 프로젝트
 * InputingSort_project.c
 * Cellularhacker
 */
