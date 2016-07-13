@@ -1,7 +1,7 @@
 /*
 * 2016-07-12
 * 버블정렬 - 프로젝트
-* SelectionSort_project.c
+* InputingSort_project.c
 * Cellularhacker
 */
 #include <stdio.h>
