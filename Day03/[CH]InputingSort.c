@@ -1,14 +1,14 @@
 /*
 * 2016-07-12
-* 셸정렬
-* ShellSort.c
+* 삽입정렬
+* InputingSort.c
 * Cellularhacker
 */
 #include <stdio.h>
 #include <stdlib.h>
 #define println() printf("\n")
 #define division_line "\n===================================\n"
-#define SORTNAME "셸정렬"
+#define SORTNAME "삽입정렬"
 
 void InputingSort(int *p, const int size);
 void printArr(int *p, const int size);
