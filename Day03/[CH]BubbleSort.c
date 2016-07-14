@@ -42,14 +42,12 @@ int main(void) {
 }
 
 void BubbleSort(int *p, int size) {
-    int i, j, tmp;
+    int i, tmp;
     for(i=0;i<size-1;i++) {
-        for(j=i+1;j<size;j++) {
-           if(p[i] > p[i+1]) {  //오름차순: >, 내림차순: <
-                tmp = p[i];
-                p[i] = p[i+1];
-                p[i+1] = tmp;
-            } 
+        if(p[i] > p[i+1]) {  //오름차순: >, 내림차순: <
+            tmp = p[i];
+            p[i] = p[i+1];
+            p[i+1] = tmp;
         }
     }
 }
