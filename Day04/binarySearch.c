@@ -1,61 +1,64 @@
 /*
-* 2016-07-12
-* 삽입정렬 - 프로젝트
-* InputingSort_project.c
+* 2016-07-14
+* 이진탐색
+* binarySearch.c
 * Cellularhacker
 */
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #define println() printf("\n")
 #define division_line "\n===================================\n"
-#define SORTNAME "삽입정렬"
+#define SEARCHNAME "이진탐색"
 
-void SelectionSort(int *p, int size, int round);
+void binarySearch(int *p, int left, int right, int key);
 void printArr(int *p, int size);
 int *openFile(char *filename, int *arr_size);
-void saveFile(char *filename, int *p, int size);
+//void saveFile(char *filename, int *p, int size);
 
 int main(int argc, char* argv[]) {
     int size = 0;
     int *arr;
-    int round = 0;
-    
-    printf("\n출력할 Round 입력>> ");
-    scanf("%d",&round);
+    int key;
+
+    printf(division_line);
+    printf("<"SEARCHNAME">\n");
+
+    printf("\n찾을 값 입력>> ");
+    scanf("%d",&key);
 
     arr = openFile(argv[1], &size);
-    SelectionSort(arr, size, round);
-    saveFile(argv[1], arr, size);
+    binarySearch(arr, 0, size-1, key);
+    //saveFile(argv[1], arr, size);
 
-    printf("\n");
+    printf(division_line);
+    println();
+
+    free(arr);
     return 0;
 }
 
-void SelectionSort(int *p, int size, int round) {
-    int i,j,tmp,index;
 
-    for(i=0;i<size-1;i++) {
-        index = i;
+void binarySearch(int *p, int left, int right, int key) {
+    int b_left = left, b_right = right;
+    int flag = (left + right)/2;
+    
+    if(p[flag]==key) {
+        printf("\t값을 찾았습니다! 찾으시는 키 값은 %d번째에 있습니다.\n",flag+1);
+        return;
+    } else {
+        if(left==right) {
+        printf("값을 찾을 수 없습니다... \n찾으시는 값이 %d(이)가 맞는지 다시한번 확인해 주세요.\n",key);
+        return;
+    }
 
-        for(j=i+1;j<size;j++) {
-            if( p[j] < p[index] ) index = j;
-        }
-        tmp = p[index];
-        p[index] = p[i];
-        p[i] = tmp;
-
-        if(i==round) { printf("[%d Round]: ",i); printArr(p, size); }
+        if(key > p[flag])
+            binarySearch(p, flag+1, b_right, key);
+        else if(key < p[flag])
+            binarySearch(p, b_left, flag-1, key);
     }
 }
 
-void printArr(int *p, int size) {
-    int i;
-    
-    for(i=0;i<size;i++) printf("%d ",p[i]);
-
-    printf("\n");    
-}
 
 int *openFile(char *filename, int *arr_size) {
     FILE *fp;
@@ -69,15 +72,15 @@ int *openFile(char *filename, int *arr_size) {
     fseek(fp, 0L, SEEK_SET); //다시 커서를 앞으로 이동
     
     tmp_arr = (int*) malloc( sizeof(int)*fSize );    
-    
-    printf("[%s]=> ",filename);
+
+    //printf("[%s]=> ",filename); //USELESS CODE IN THIS PROJECT
     while(fscanf(fp, "%d ", &data) != EOF) {
         tmp_arr[i] = data;
-        printf("%d ",tmp_arr[i]);
+        //printf("%d ",tmp_arr[i]); //USELESS CODE IN THIS PROJECT
         i++;
     }
 
-    printf("\n");
+    println();
 
     *arr_size = i;
     p = (int*) malloc( sizeof(int)*(*arr_size));
@@ -90,7 +93,7 @@ int *openFile(char *filename, int *arr_size) {
     return p;    
 }
 
-
+/*
 void saveFile(char *filename, int *p, int size) {
     FILE *fp;
     int i, j;
@@ -116,4 +119,4 @@ void saveFile(char *filename, int *p, int size) {
     printf("Result has been successfully saved in [%s] !\n",save_filename);
     free(p);
     free(str1);
-}
+}*/

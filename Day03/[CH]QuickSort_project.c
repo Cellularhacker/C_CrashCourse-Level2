@@ -80,7 +80,7 @@ int *openFile(char *filename) {
     fSize = ftell(fp);  //파일 크기를 기록
     fseek(fp, 0L, SEEK_SET); //다시 커서를 앞으로 이동
     
-    tmp_arr = (int*) malloc( sizeof(int)*fSize );    
+    tmp_arr = (int*) malloc( sizeof(int)*fSize );
 
     printf("[%s]=> ",filename);
     while(fscanf(fp, "%d ", &data) != EOF) {
