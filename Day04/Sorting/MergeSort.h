@@ -12,11 +12,6 @@ void MergeSort_Split(int arr[], int left, int right, int round);
 void MergeSort_Merge(int arr[], int left, int mid, int right, int round);
 #endif
 
-#ifndef printArr_Func
-#define printArr_Func
-void printArr(int *p, int size);
-#endif
-
 void MergeSort(int *p, int size, int round) {
     int i, arr[size];
     for(i=0;i<size;i++) arr[i] = p[i];
@@ -81,12 +76,4 @@ void MergeSort_Merge(int arr[], int left, int mid, int right, int round) {
         p[m] = tmp_arr[m];
     }
     //printArr(arr, size); //DEBUG CODE
-}
-
-void printArr(int *p, int size) {
-    int i;
-
-    printf("Result=> ");
-    for(i=0;i<size;i++) printf("%d ",p[i]);
-    printf("\n");
 }

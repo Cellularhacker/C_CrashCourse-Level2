@@ -34,11 +34,3 @@ void InsertionSort(int *p, int size, int round) {
         if(round==rnd_i) printArr(p, size);
     }
 }
-
-void printArr(int *p, int size) {
-    int i;
-
-    printf("Result=> ");
-    for(i=0;i<size;i++) printf("%d ",p[i]);
-    printf("\n");
-}

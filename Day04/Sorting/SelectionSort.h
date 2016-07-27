@@ -10,11 +10,6 @@
 void Selectionort(int *p, int size, int round);
 #endif
 
-#ifndef printArr_Func
-#define printArr_Func
-void printArr(int *p, int size);
-#endif
-
 void SelectionSort(int *p, int size, int round) {
     int i,j,tmp,index,rnd_i=0;
 
@@ -30,12 +25,4 @@ void SelectionSort(int *p, int size, int round) {
         rnd_i++;
         if(round==rnd_i) printArr(p, size);
     }
-}
-
-void printArr(int *p, int size) {
-    int i;
-
-    printf("Result=> ");
-    for(i=0;i<size;i++) printf("%d ",p[i]);
-    printf("\n");
 }
