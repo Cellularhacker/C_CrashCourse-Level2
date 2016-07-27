@@ -10,11 +10,6 @@
 void InsertionSort(int *p, int size, int round);
 #endif
 
-#ifndef printArr_Func
-#define printArr_Func
-void printArr(int *p, int size);
-#endif
-
 void InsertionSort(int *p, int size, int round) {
     int tmp, i, j, rnd_i=0;
     

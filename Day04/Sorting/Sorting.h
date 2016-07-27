@@ -16,11 +16,6 @@
     void Sorting_main(int *p, int size);
 #endif
 
-#ifndef printArr_Func
-    #define printArr_Func
-    void printArr(int *p, size);
-#endif
-
 void Sorting_main(int *p, int size) {
     int sorting, round=0;
     
@@ -42,12 +37,4 @@ void Sorting_main(int *p, int size) {
         case 6: InsertionSort(p, size, round); break;
         default: printf("\n잘못 입력 하셨습니다... 다시 입력해 주세요. \n\n"); Sorting_main(int p, size); break;
     }
-}
-
-void printArr(int *p, int size) {
-    int i;
-
-    printf("Result=> ");
-    for(i=0;i<size;i++) printf("%d ",p[i]);
-    printf("\n");
 }

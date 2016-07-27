@@ -7,17 +7,23 @@
 */
 #include <stdio.h>
 #include "Sorting.h"
+#include "Fileio.h"
+#include "Functions.h"
 
 int main(int argc, char* argv[]) {
     int *arr;
+    int size=0;
     
     printf("\n출력할 Round 입력>> ");
     scanf("%d",&rnd);
 
-    arr = openFile(argv[1]);
+    arr = openFile(argv[1], &size);
     //Sorting Codes;
-    saveFile(argv[1], arr);
+    Sorting_main(arr, size)
+
+    saveFile(argv[1], arr, size);
 
     printf("\n");
     return 0;
 }
+
