@@ -12,11 +12,10 @@
 
 void ShellSort(int *p, int size, int round) {
     int gap, i, j, x, tmp, rnd_i=0;
-    for(gap = 1; gap < (size/3); gap = (3*gap+1));
     
-    if(round==rnd_i) printArr(p, size);
-
     while(gap>0) {
+        if(round==rnd_i) printArr(p, size);
+
         for(x=0; x<gap; x++) {
             for(i=x+gap; i<size; i+=gap) {
                 tmp = p[i];
