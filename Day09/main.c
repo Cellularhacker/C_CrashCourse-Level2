@@ -23,10 +23,13 @@ int main(void) {
 
     PreOrderPrintTree(root);
     printf("\n");
+    getchar();
     InOrderPrintTree(root);
     printf("\n");
+    getchar();
     PostOrderPrintTree(root);
     printf("\n");
+    getchar();
 
     DestroyTree(root);
 

@@ -89,6 +89,7 @@ Node* removeNode(Node* Tree, int data) {
     return Tree;
 }
 
+/*
 //Destroy the Node
 void DestroyNode(Node *root, int data) {
     Node *parent, *child, *successor, *successor_p, *target;
@@ -143,7 +144,7 @@ void DestroyNode(Node *root, int data) {
     }
 
     free(target);
-}
+}*/
 
 //Destroy the TREE
 void DestroyTree(Node* root) {
