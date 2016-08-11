@@ -73,11 +73,11 @@ int main(int argc, char *argv[])
 		//printf("Press \'Ctrl + C\' to quit...\n");
 	
 		while(1) {
-			printf("¼ø¼­´ë·Î ¼ýÀÚ 3°³¸¦ ÀÔ·ÂÇÏ¼¼¿ä!\n\t>>> ");
-			for(for_i=0;for_i<3;for_i++) scanf("%d",&bb_cli.arr[for_i]);
-			send(hSocket, (const char *)&bb_cli, sizeof(BBR), 0);
+			printf("ìˆœì„œëŒ€ë¡œ ìˆ«ìž 3ê°œë¥¼ ìž…ë ¥í•˜ì„¸ìš”!\n\t>>> ");
+			for(for_i=0;for_i<3;for_i++) scanf("%d",bb_cli.arr[for_i]);
+			send(hSocket, (const char *)bb_cli, sizeof(BBR), 0);
 			
-			recv(hSocket, (char *)&bbr_cli, sizeof(bb_cli), 0);
+			recv(hSocket, (char *)bbr_cli, sizeof(bb_cli), 0);
 			printBBR(bbr_cli);
 		}
 		
