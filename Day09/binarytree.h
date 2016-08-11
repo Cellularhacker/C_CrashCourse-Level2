@@ -11,7 +11,7 @@ typedef struct treeNode {
 } Node;
 
 Node* CreateNode(int Number);
-void InsertNoode(Node *node, int Number);
+void InsertNode(Node *root, int Number);
 void DestroyNode(Node *root, int data);
 void DestroyTree(Node *root);
 void PreOrderPrintTree(Node *node);

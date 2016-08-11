@@ -22,8 +22,11 @@ int main(void) {
     InsertNode(root, 37);
 
     PreOrderPrintTree(root);
+    printf("\n");
     InOrderPrintTree(root);
+    printf("\n");
     PostOrderPrintTree(root);
+    printf("\n");
 
     DestroyTree(root);
 
