@@ -25,16 +25,13 @@ void InsertNode(Node *root, int Number) {
 
     Node* newNode = (Node*) malloc(sizeof(Node));
     */
-    //삽입연산 함수
-//key를 이진 탐색 트리 root에 삽입한다.
-//key가 이미 root안에 있으면 삽입되지 않는다.
-
-    Node *parent, *target;  //p는 부모노드, t는 현재노드
-    Node *newNode;  //n은 새로운 노드
+    
+    Node *parent, *target;
+    Node *newNode;
     target = root;
     parent = NULL;
 
-    //탐색을 먼저 수행
+    //Search the data first.
     while(target != NULL) {
         if(Number == target->data) {
             printf("이미 트리에 존재하는 값입니다.\n ");
@@ -45,18 +42,18 @@ void InsertNode(Node *root, int Number) {
         else target = target->right;
     }
     
-    //item이 트리안에 없으므로 삽입 가능
+    //There's no data in the tree, so continue inserting process.
     newNode = (Node*)malloc(sizeof(Node));
     if(newNode == NULL) return;
-    //데이터 복사
+    //Copy Data
     newNode->data = Number;
     newNode->left = newNode->right = NULL;
-    //부모노드와 링크 연결
+    //Connects Link with Parent Node
     if(parent != NULL){
         if(Number < parent->data) parent->left = newNode;
         else parent->right = newNode;
     }
-    else root = newNode;  //부모가 없으면 자기자신이 부모가 되라.
+    else root = newNode;  //First 
 }
 
 
