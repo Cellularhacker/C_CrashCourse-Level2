@@ -1,3 +1,10 @@
+/*
+* 2016-07-15 ~ 2016-08-13
+* 이진트리
+* basic.h
+* Cellularhacker
+* GNU General Public License v3.0
+*/
 #include "binarytree.h"
 
 //Create A Node for New Tree
