@@ -7,14 +7,16 @@
 */
 
 #include "binarytree.h"
-#include "additional.h"
 
+int quit_code = 1; 
 
 int main(void) {
-    while(1) {
-        cmdMainScreenFunc();
-        cmdSelectFunc();
+    Node *default_root = NULL;
+    while(quit_code != 0) {
+        cmdMainScreenFunc(default_root);
+        cmdSelectFunc(default_root);
     }
 
     return 0;
 }
+

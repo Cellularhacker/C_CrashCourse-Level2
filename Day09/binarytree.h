@@ -20,10 +20,15 @@ typedef struct treeNode {
 Node* CreateNode(int Number);
 void InsertNode(Node *root, int Number);
 void DestroyNode(Node *root, int data);
+Node* removeNode(Node* Tree, int data);
 void DestroyTree(Node *root);
 void PreOrderPrintTree(Node *node);
 void InOrderPrintTree(Node *node);
 void PostOrderPrintTree(Node *node);
 
+
+void cmdErrorHandlingFunc(char* errMessage);
+void cmdMainScreenFunc(Node *default_root);
+void cmdSelectFunc(Node *default_root);
 
 #endif
