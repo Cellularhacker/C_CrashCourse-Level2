@@ -11,28 +11,10 @@
 
 
 int main(void) {
-    Node *root = NULL;
-    Node *tmp;
-
-    root = CreateNode(11);
-    InsertNode(root, 5);
-    InsertNode(root, 1);
-    InsertNode(root, 7);
-    InsertNode(root, 17);
-    InsertNode(root, 15);
-    InsertNode(root, 37);
-
-    PreOrderPrintTree(root);
-    printf("\n");
-    getchar();
-    InOrderPrintTree(root);
-    printf("\n");
-    getchar();
-    PostOrderPrintTree(root);
-    printf("\n");
-    getchar();
-
-    DestroyTree(root);
+    while(1) {
+        cmdMainScreenFunc();
+        cmdSelectFunc();
+    }
 
     return 0;
 }

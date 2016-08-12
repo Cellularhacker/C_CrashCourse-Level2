@@ -10,9 +10,9 @@
 
 Node *default_root = NULL;
 
-cmdMainScreenFunc();
-cmdSelectFunc();
-cmdErrorHandlingFunc(char* errMessage);
+void cmdMainScreenFunc();
+void cmdSelectFunc();
+void cmdErrorHandlingFunc(char* errMessage);
 
 
 #endif
