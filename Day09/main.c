@@ -7,6 +7,7 @@
 */
 
 #include "binarytree.h"
+#include "additional.h"
 
 
 int main(void) {
