@@ -11,49 +11,16 @@ Node* CreateNode(int Number) {
     return newNode;
 }
 
-//Insert A Value in A Tree
 
-void InsertNode(Node *root, int Number) {
-    /*
+//Insert A Value in A Tree
+void InsertNode(Node *node, int Number) {
     if(Number > node->data) {
         if(node->right != NULL) InsertNode(node->right, Number);
-        else node->right = newNode;
+        else node->right = CreateNode(Number);
     } else if(Number < node->data) {
         if(node->left != NULL) InsertNode(node->left, Number);
-        else node->left = newNode;
+        else node->left = CreateNode(Number);
     }
-
-    Node* newNode = (Node*) malloc(sizeof(Node));
-    */
-    
-    Node *parent, *target;
-    Node *newNode;
-    target = root;
-    parent = NULL;
-
-    //Search the data first.
-    while(target != NULL) {
-        if(Number == target->data) {
-            printf("이미 트리에 존재하는 값입니다.\n ");
-            return;
-        }
-        parent = target;
-        if(Number < target->data) target = target->left;
-        else target = target->right;
-    }
-    
-    //There's no data in the tree, so continue inserting process.
-    newNode = (Node*)malloc(sizeof(Node));
-    if(newNode == NULL) return;
-    //Copy Data
-    newNode->data = Number;
-    newNode->left = newNode->right = NULL;
-    //Connects Link with Parent Node
-    if(parent != NULL){
-        if(Number < parent->data) parent->left = newNode;
-        else parent->right = newNode;
-    }
-    else root = newNode;  //First 
 }
 
 
@@ -68,7 +35,7 @@ Node* removeNode(Node* Tree, int data) {
     Node* tempNode;
     
     if(Tree == NULL) printf("해당 노드를 찾을 수 없습니다.\n");
-    else if(Tree->data > data) Tree->left = removeNode(Tree->left, data);
+    else if(Tree->data > data) Tree->left = removeNode(Tree->left, data); 
     else if(Tree->data < data) Tree->right = removeNode(Tree->right, data);
     else {
         if(Tree->left != NULL && Tree->right != NULL) {
